@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Colony Core - Digital Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Modern CSS Variables */
+        :root {
+            --yellow-primary: #FFD700;
+            --yellow-light: #FFF9C4;
+            --yellow-dark: #FFA000;
+            --black-primary: #0A0A0A;
+            --black-light: #1A1A1A;
+            --black-lighter: #2A2A2A;
+            --text-light: #F5F5F5;
+            --text-muted: #AAAAAA;
+            --accent-blue: #3B82F6;
+            --accent-purple: #8B5CF6;
+            --accent-green: #10B981;
+            --accent-red: #EF4444;
+            --gradient-yellow: linear-gradient(135deg, #FFD700 0%, #FFA000 100%);
+            --gradient-dark: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+            --gradient-blue: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+            --gradient-green: linear-gradient(135deg, #10B981 0%, #3B82F6 100%);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.2);
+            --shadow-sm: 0 5px 20px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--black-primary);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-yellow);
+            color: var(--black-primary);
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--yellow-primary);
+            border: 2px solid var(--yellow-primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 24px 0;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--yellow-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-yellow);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon i {
+            color: var(--black-primary);
+            font-size: 1.2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--yellow-primary);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--yellow-primary);
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--yellow-primary);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        /* Services Hero */
+        .services-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            position: relative;
+            overflow: hidden;
+            background: var(--gradient-dark);
+        }
+        
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        
+        .hero-content h1 span {
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        
+        /* Service Categories */
+        .service-categories {
+            background: var(--black-primary);
+        }
+        
+        .categories-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .category-tab {
+            padding: 16px 32px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category-tab.active {
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            border-color: var(--yellow-primary);
+        }
+        
+        .category-tab:hover:not(.active) {
+            border-color: var(--yellow-primary);
+            color: var(--yellow-primary);
+        }
+        
+        .category-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .category-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+        
+        .service-card {
+            background: var(--black-light);
+            border-radius: var(--border-radius);
+            padding: 48px 32px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--yellow-primary);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-yellow);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            font-size: 2.5rem;
+        }
+        
+        .mobile-icon { background: rgba(59, 130, 246, 0.1); color: var(--accent-blue); }
+        .web-icon { background: rgba(255, 215, 0, 0.1); color: var(--yellow-primary); }
+        .cloud-icon { background: rgba(139, 92, 246, 0.1); color: var(--accent-purple); }
+        .automation-icon { background: rgba(16, 185, 129, 0.1); color: var(--accent-green); }
+        .security-icon { background: rgba(239, 68, 68, 0.1); color: var(--accent-red); }
+        .integration-icon { background: rgba(255, 215, 0, 0.1); color: var(--yellow-primary); }
+        
+        .service-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+        
+        .service-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 24px 0;
+        }
+        
+        .service-features li {
+            color: var(--text-muted);
+            padding: 8px 0;
+            position: relative;
+            padding-left: 28px;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--yellow-primary);
+            font-weight: bold;
+        }
+        
+        .service-card .btn {
+            margin-top: 16px;
+            padding: 12px 24px;
+        }
+        
+        /* Process Section */
+        .process-section {
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .process-step {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .step-number {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-yellow);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--black-primary);
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+        
+        .step-content p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        
+        .step-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .step-feature {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        /* Technology Stack */
+        .tech-stack {
+            background: var(--black-primary);
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .tech-card {
+            background: var(--black-light);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tech-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .tech-card h3 i {
+            color: var(--yellow-primary);
+        }
+        
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        
+        .tech-item:hover {
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            transform: translateY(-2px);
+        }
+        
+        .tech-item i {
+            font-size: 0.9rem;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            background: var(--gradient-dark);
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+        
+        .case-card {
+            background: var(--black-light);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .case-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--yellow-primary);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .case-header {
+            padding: 40px 32px 32px;
+        }
+        
+        .case-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 2.5rem;
+            color: var(--black-primary);
+        }
+        
+        .case-planet { background: var(--gradient-yellow); }
+        .case-freelancers { background: var(--gradient-blue); }
+        .case-viral { background: var(--gradient-green); }
+        
+        .case-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+        
+        .case-header p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        .case-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 24px 32px;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .case-stat {
+            text-align: center;
+        }
+        
+        .case-stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--yellow-primary);
+            display: block;
+        }
+        
+        .case-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            background: var(--black-primary);
+        }
+        
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .pricing-tab {
+            padding: 16px 32px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .pricing-tab.active {
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            border-color: var(--yellow-primary);
+        }
+        
+        .pricing-content {
+            display: none;
+        }
+        
+        .pricing-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .pricing-card {
+            background: var(--black-light);
+            border-radius: var(--border-radius);
+            padding: 48px 32px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+        }
+        
+        .pricing-card.popular {
+            border-color: var(--yellow-primary);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.popular::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+        
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 32px;
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .pricing-features li {
+            color: var(--text-muted);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features li i {
+            color: var(--yellow-primary);
+            margin-right: 10px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 100%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .cta p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black-light);
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: var(--text-light);
+        }
+        
+        .footer-col p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .social-links a {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--yellow-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            transform: translateY(-3px);
+        }
+        
+        .quick-links {
+            list-style: none;
+        }
+        
+        .quick-links li {
+            margin-bottom: 16px;
+        }
+        
+        .quick-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .quick-links a:hover {
+            color: var(--yellow-primary);
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .process-step {
+                grid-template-columns: 80px 1fr;
+                gap: 30px;
+            }
+            
+            .step-number {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .header-container {
+                position: relative;
+            }
+            
+            nav {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: var(--black-light);
+                backdrop-filter: blur(10px);
+                transition: var(--transition);
+                padding: 40px 24px;
+                z-index: 999;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 24px;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-cta {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .categories-tabs,
+            .pricing-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-tab,
+            .pricing-tab {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .process-step {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin: 0 auto;
+            }
+            
+            .cta h2 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .service-card,
+            .tech-card,
+            .case-card,
+            .pricing-card {
+                padding: 32px 24px;
+            }
+            
+            .price {
+                font-size: 2.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                COLONY CORE
+            </a>
+            
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="platforms.html">Platforms</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-outline">Get Started</a>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Comprehensive <span>Digital Solutions</span></h1>
+                <p>We provide end-to-end digital services that transform businesses and enhance everyday life through innovative technology, mobile applications, and intelligent systems.</p>
+                <div class="cta-buttons">
+                    <a href="#services" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Explore Services
+                    </a>
+                    <a href="#pricing" class="btn btn-outline">
+                        <i class="fas fa-tags"></i> View Pricing
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="service-categories" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Digital Services</h2>
+                <p>Specialized solutions designed to meet your unique business needs and digital transformation goals</p>
+            </div>
+            
+            <div class="categories-tabs">
+                <button class="category-tab active" data-category="development">
+                    <i class="fas fa-code"></i> Development
+                </button>
+                <button class="category-tab" data-category="cloud">
+                    <i class="fas fa-cloud"></i> Cloud & Infrastructure
+                </button>
+                <button class="category-tab" data-category="automation">
+                    <i class="fas fa-robot"></i> Automation & Integration
+                </button>
+            </div>
+            
+            <!-- Development Services -->
+            <div class="category-content active" id="development">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon mobile-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile App Development</h3>
+                        <p>Native and cross-platform mobile applications for iOS and Android that provide seamless user experiences and solve real-world problems.</p>
+                        
+                        <ul class="service-features">
+                            <li>iOS & Android Native Development</li>
+                            <li>React Native & Flutter Apps</li>
+                            <li>Mobile UX/UI Design</li>
+                            <li>App Store Optimization</li>
+                            <li>Progressive Web Apps (PWA)</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn btn-outline">Start Mobile Project</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon web-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Web Platform Solutions</h3>
+                        <p>Scalable web applications and platforms that drive business growth and enhance digital presence across all devices.</p>
+                        
+                        <ul class="service-features">
+                            <li>Full-Stack Web Development</li>
+                            <li>Single Page Applications (SPA)</li>
+                            <li>E-commerce Platforms</li>
+                            <li>Content Management Systems</li>
+                            <li>API Development & Integration</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn btn-outline">Build Web Solution</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon integration-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Custom Software Development</h3>
+                        <p>Tailored software solutions designed to address specific business challenges and optimize operational workflows.</p>
+                        
+                        <ul class="service-features">
+                            <li>Business Process Automation</li>
+                            <li>Custom CRM & ERP Systems</li>
+                            <li>Data Analytics Dashboards</li>
+                            <li>Inventory Management Systems</li>
+                            <li>Reporting & Analytics Tools</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn btn-outline">Discuss Custom Solution</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cloud Services -->
+            <div class="category-content" id="cloud">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon cloud-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Cloud Infrastructure</h3>
+                        <p>Comprehensive cloud solutions ensuring data accessibility, security, and scalability for modern digital ecosystems.</p>
+                        
+                        <ul class="service-features">
+                            <li>AWS, Azure & Google Cloud Setup</li>
+                            <li>Cloud Migration Services</li>
+                            <li>Serverless Architecture</li>
+                            <li>Containerization (Docker, Kubernetes)</li>
+                            <li>Cloud Cost Optimization</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn btn-outline">Optimize Cloud Setup</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon security-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Digital Security</h3>
+                        <p>Comprehensive security solutions protecting digital assets and ensuring data privacy for businesses and users.</p>
+                        
+                        <ul class="service-features">
+                            <li>Security Audits & Assessments</li>
+                            <li>Data Encryption & Protection</li>
+                            <li>Security Monitoring & Incident Response</li>
+                            <li>Compliance (GDPR, HIPAA, etc.)</li>
+                            <li>Penetration Testing</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn btn-outline">Secure Your Systems</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon automation-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Database Management</h3>
+                        <p>Designing and managing databases with focus on performance optimization, security, and scalability.</p>
+                        
+                        <ul class="service-features">
+                            <li>Database Design & Optimization</li>
+                            <li>SQL & NoSQL Solutions</li>
+                            <li>Data Migration Services</li>
+                            <li>Backup & Disaster Recovery</li>
+                            <li>Real-time Data Processing</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn btn-outline">Optimize Databases</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Automation Services -->
+            <div class="category-content" id="automation">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon automation-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Process Automation</h3>
+                        <p>Streamline operations with intelligent automation solutions that reduce manual work and increase efficiency.</p>
+                        
+                        <ul class="service-features">
+                            <li>Workflow Automation</li>
+                            <li>Robotic Process Automation (RPA)</li>
+                            <li>Business Process Management</li>
+                            <li>Chatbot & Virtual Assistant Development</li>
+                            <li>AI-Powered Automation</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn btn-outline">Automate Processes</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon integration-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>System Integration</h3>
+                        <p>Connect disparate systems and platforms to create unified digital ecosystems that work seamlessly together.</p>
+                        
+                        <ul class="service-features">
+                            <li>API Integration & Development</li>
+                            <li>Third-Party System Integration</li>
+                            <li>Legacy System Modernization</li>
+                            <li>Data Integration & ETL</li>
+                            <li>Real-time System Synchronization</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn btn-outline">Integrate Systems</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon mobile-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Analytics & Intelligence</h3>
+                        <p>Transform data into actionable insights with advanced analytics and business intelligence solutions.</p>
+                        
+                        <ul class="service-features">
+                            <li>Business Intelligence Dashboards</li>
+                            <li>Predictive Analytics</li>
+                            <li>Data Visualization</li>
+                            <li>Customer Behavior Analysis</li>
+                            <li>Performance Tracking & Reporting</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn btn-outline">Gain Insights</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Development Process</h2>
+                <p>A structured, transparent approach to delivering exceptional digital solutions on time and within budget</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Discovery & Strategy</h3>
+                        <p>We begin by deeply understanding your business goals, target audience, and technical requirements. Our team conducts workshops and research to define the project scope and create a comprehensive digital strategy.</p>
+                        <div class="step-features">
+                            <span class="step-feature">Requirement Analysis</span>
+                            <span class="step-feature">Market Research</span>
+                            <span class="step-feature">Technical Planning</span>
+                            <span class="step-feature">Project Roadmap</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Design & Prototyping</h3>
+                        <p>Our design team creates intuitive user interfaces and interactive prototypes. We focus on user experience, accessibility, and visual design that aligns with your brand identity and business objectives.</p>
+                        <div class="step-features">
+                            <span class="step-feature">Wireframing</span>
+                            <span class="step-feature">UI/UX Design</span>
+                            <span class="step-feature">Prototype Testing</span>
+                            <span class="step-feature">Design System</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Development & Testing</h3>
+                        <p>We build your solution using cutting-edge technologies with agile development methodologies. Rigorous testing at every stage ensures quality, performance, and security.</p>
+                        <div class="step-features">
+                            <span class="step-feature">Agile Development</span>
+                            <span class="step-feature">Quality Assurance</span>
+                            <span class="step-feature">Security Testing</span>
+                            <span class="step-feature">Performance Optimization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Deployment & Support</h3>
+                        <p>We deploy your solution and provide ongoing support to ensure continuous improvement and success. Our team monitors performance and implements updates as needed.</p>
+                        <div class="step-features">
+                            <span class="step-feature">Production Deployment</span>
+                            <span class="step-feature">Maintenance & Updates</span>
+                            <span class="step-feature">Performance Monitoring</span>
+                            <span class="step-feature">Technical Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="tech-stack" id="technology">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technology Stack</h2>
+                <p>We leverage cutting-edge technologies and frameworks to build robust, scalable, and future-proof solutions</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3><i class="fas fa-desktop"></i> Frontend Technologies</h3>
+                    <div class="tech-list">
+                        <div class="tech-item"><i class="fab fa-react"></i> React.js</div>
+                        <div class="tech-item"><i class="fab fa-vuejs"></i> Vue.js</div>
+                        <div class="tech-item"><i class="fab fa-angular"></i> Angular</div>
+                        <div class="tech-item"><i class="fab fa-js"></i> TypeScript</div>
+                        <div class="tech-item"><i class="fab fa-html5"></i> HTML5/CSS3</div>
+                        <div class="tech-item"><i class="fab fa-sass"></i> Sass/SCSS</div>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <h3><i class="fas fa-server"></i> Backend Technologies</h3>
+                    <div class="tech-list">
+                        <div class="tech-item"><i class="fab fa-node-js"></i> Node.js</div>
+                        <div class="tech-item"><i class="fab fa-python"></i> Python/Django</div>
+                        <div class="tech-item"><i class="fab fa-php"></i> PHP/Laravel</div>
+                        <div class="tech-item"><i class="fas fa-database"></i> MySQL</div>
+                        <div class="tech-item"><i class="fas fa-database"></i> MongoDB</div>
+                        <div class="tech-item"><i class="fas fa-bolt"></i> Redis</div>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
+                    <div class="tech-list">
+                        <div class="tech-item"><i class="fab fa-swift"></i> Swift (iOS)</div>
+                        <div class="tech-item"><i class="fab fa-android"></i> Kotlin (Android)</div>
+                        <div class="tech-item"><i class="fab fa-react"></i> React Native</div>
+                        <div class="tech-item"><i class="fas fa-feather-alt"></i> Flutter</div>
+                        <div class="tech-item"><i class="fas fa-mobile"></i> Ionic</div>
+                        <div class="tech-item"><i class="fab fa-app-store"></i> App Store Deployment</div>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    <div class="tech-list">
+                        <div class="tech-item"><i class="fab fa-aws"></i> AWS</div>
+                        <div class="tech-item"><i class="fab fa-google"></i> Google Cloud</div>
+                        <div class="tech-item"><i class="fab fa-microsoft"></i> Azure</div>
+                        <div class="tech-item"><i class="fab fa-docker"></i> Docker</div>
+                        <div class="tech-item"><i class="fab fa-git"></i> Git/GitHub</div>
+                        <div class="tech-item"><i class="fas fa-code-branch"></i> CI/CD Pipelines</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies" id="cases">
+        <div class="container">
+            <div class="section-title">
+                <h2>Platform Case Studies</h2>
+                <p>Real-world examples of digital solutions we've built for diverse communities and industries</p>
+            </div>
+            
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-icon case-planet">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Planet Colony</h3>
+                        <p>A comprehensive news and content platform delivering curated information across technology, lifestyle, business, and community updates to thousands of daily readers.</p>
+                    </div>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <span class="case-stat-number">10K+</span>
+                            <span class="case-stat-label">Daily Readers</span>
+                        </div>
+                        <div class="case-stat">
+                            <span class="case-stat-number">100+</span>
+                            <span class="case-stat-label">Content Categories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-icon case-freelancers">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Freelancers Colony</h3>
+                        <p>Connecting skilled professionals with opportunities while providing resources for skill development and career growth in the modern gig economy.</p>
+                    </div>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <span class="case-stat-number">8K+</span>
+                            <span class="case-stat-label">Freelancers</span>
+                        </div>
+                        <div class="case-stat">
+                            <span class="case-stat-number">2K+</span>
+                            <span class="case-stat-label">Projects</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-icon case-viral">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Viral Son</h3>
+                        <p>A trending content platform that surfaces the most engaging and popular content across social media, news, and entertainment sectors.</p>
+                    </div>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <span class="case-stat-number">15K+</span>
+                            <span class="case-stat-label">Daily Users</span>
+                        </div>
+                        <div class="case-stat">
+                            <span class="case-stat-number">500+</span>
+                            <span class="case-stat-label">Trends Tracked</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Flexible Pricing Plans</h2>
+                <p>Choose the perfect plan for your project needs with transparent pricing and no hidden fees</p>
+            </div>
+            
+            <div class="pricing-tabs">
+                <button class="pricing-tab active" data-plan="development">Development Projects</button>
+                <button class="pricing-tab" data-plan="support">Support & Maintenance</button>
+                <button class="pricing-tab" data-plan="consulting">Consulting Services</button>
+            </div>
+            
+            <!-- Development Pricing -->
+            <div class="pricing-content active" id="development">
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Basic</h3>
+                        <div class="price">$5,000<span>/project</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Small Mobile App</li>
+                            <li><i class="fas fa-check"></i> Basic Website</li>
+                            <li><i class="fas fa-check"></i> 2-4 Week Timeline</li>
+                            <li><i class="fas fa-times"></i> No Ongoing Support</li>
+                            <li><i class="fas fa-times"></i> Limited Revisions</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Get Started</a>
+                    </div>
+                    
+                    <div class="pricing-card popular">
+                        <h3>Professional</h3>
+                        <div class="price">$15,000<span>/project</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Full Mobile App</li>
+                            <li><i class="fas fa-check"></i> Web Platform</li>
+                            <li><i class="fas fa-check"></i> 6-10 Week Timeline</li>
+                            <li><i class="fas fa-check"></i> 3 Months Support</li>
+                            <li><i class="fas fa-check"></i> Multiple Revisions</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Choose Plan</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>Enterprise</h3>
+                        <div class="price">$50,000<span>/project</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Complex Platform</li>
+                            <li><i class="fas fa-check"></i> Multi-platform App</li>
+                            <li><i class="fas fa-check"></i> 12+ Week Timeline</li>
+                            <li><i class="fas fa-check"></i> 6 Months Support</li>
+                            <li><i class="fas fa-check"></i> Unlimited Revisions</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Support Pricing -->
+            <div class="pricing-content" id="support">
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Basic Support</h3>
+                        <div class="price">$500<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 10 Hours Support</li>
+                            <li><i class="fas fa-check"></i> Bug Fixes</li>
+                            <li><i class="fas fa-check"></i> Security Updates</li>
+                            <li><i class="fas fa-times"></i> No New Features</li>
+                            <li><i class="fas fa-times"></i> Limited Response Time</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Get Started</a>
+                    </div>
+                    
+                    <div class="pricing-card popular">
+                        <h3>Professional</h3>
+                        <div class="price">$1,500<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 40 Hours Support</li>
+                            <li><i class="fas fa-check"></i> Regular Updates</li>
+                            <li><i class="fas fa-check"></i> Performance Monitoring</li>
+                            <li><i class="fas fa-check"></i> Minor Features</li>
+                            <li><i class="fas fa-check"></i> 24/7 Emergency Support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Choose Plan</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>Enterprise</h3>
+                        <div class="price">$5,000<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Dedicated Team</li>
+                            <li><i class="fas fa-check"></i> Full Development</li>
+                            <li><i class="fas fa-check"></i> Priority Support</li>
+                            <li><i class="fas fa-check"></i> SLA Guarantee</li>
+                            <li><i class="fas fa-check"></i> Custom Reporting</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Digital Presence?</h2>
+                <p>Let's discuss your project requirements and create a custom solution that drives growth and enhances user experience.</p>
+                
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i> Schedule Consultation
+                    </a>
+                    <a href="platforms.html" class="btn btn-outline">
+                        <i class="fas fa-external-link-alt"></i> View Our Platforms
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Colony Core</h3>
+                    <p>Creating innovative digital solutions that enhance life in the digital space through cutting-edge technology and intuitive design.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="quick-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Mobile App Development</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Web Platform Solutions</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cloud Infrastructure</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Process Automation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul class="quick-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Platforms</h3>
+                    <ul class="quick-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Planet Colony</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Freelancers Colony</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Viral Son</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Planet Play</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Colony Core. All rights reserved. | Founded by Michael & Ekemini Edet</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Service Category Tabs
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const categoryContents = document.querySelectorAll('.category-content');
+        
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const categoryId = tab.getAttribute('data-category');
+                
+                // Remove active class from all tabs and contents
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                categoryContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(categoryId).classList.add('active');
+            });
+        });
+        
+        // Pricing Tabs
+        const pricingTabs = document.querySelectorAll('.pricing-tab');
+        const pricingContents = document.querySelectorAll('.pricing-content');
+        
+        pricingTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const planId = tab.getAttribute('data-plan');
+                
+                // Remove active class from all tabs and contents
+                pricingTabs.forEach(t => t.classList.remove('active'));
+                pricingContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(planId).classList.add('active');
+            });
+        });
+        
+        // Service card hover effects
+        const serviceCards = document.querySelectorAll('.service-card');
+        const caseCards = document.querySelectorAll('.case-card');
+        const pricingCards = document.querySelectorAll('.pricing-card');
+        
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+        
+        caseCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+        
+        pricingCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                if (!card.classList.contains('popular')) {
+                    card.style.transform = 'translateY(-5px)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                if (!card.classList.contains('popular')) {
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Tech item hover effects
+        const techItems = document.querySelectorAll('.tech-item');
+        
+        techItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-2px)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Update active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                if(link.getAttribute('href').startsWith('#')) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        });
+        
+        // Animated counters for case studies
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stats = entry.target.querySelectorAll('.case-stat-number');
+                    stats.forEach(stat => {
+                        const target = parseInt(stat.textContent.replace('K+', '000').replace('+', ''));
+                        const isK = stat.textContent.includes('K+');
+                        let current = 0;
+                        const increment = target / 50;
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                stat.textContent = isK ? (target/1000) + 'K+' : target + '+';
+                                clearInterval(timer);
+                            } else {
+                                stat.textContent = isK ? Math.floor(current/1000) + 'K+' : Math.floor(current) + '+';
+                            }
+                        }, 30);
+                    });
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe case studies section for animation
+        const caseSection = document.getElementById('cases');
+        if (caseSection) {
+            observer.observe(caseSection);
+        }
+    </script>
+</body>
+</html>

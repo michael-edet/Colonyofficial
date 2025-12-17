@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Colony Core | Our Founders & Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Modern CSS Variables */
+        :root {
+            --yellow-primary: #FFD700;
+            --yellow-light: #FFF9C4;
+            --yellow-dark: #FFA000;
+            --black-primary: #0A0A0A;
+            --black-light: #1A1A1A;
+            --black-lighter: #2A2A2A;
+            --text-light: #F5F5F5;
+            --text-muted: #AAAAAA;
+            --accent-blue: #3B82F6;
+            --accent-purple: #8B5CF6;
+            --gradient-yellow: linear-gradient(135deg, #FFD700 0%, #FFA000 100%);
+            --gradient-dark: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.2);
+            --shadow-sm: 0 5px 20px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--black-primary);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-yellow);
+            color: var(--black-primary);
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--yellow-primary);
+            border: 2px solid var(--yellow-primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 24px 0;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--yellow-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-yellow);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon i {
+            color: var(--black-primary);
+            font-size: 1.2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--yellow-primary);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--yellow-primary);
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--yellow-primary);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        /* About Hero */
+        .about-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            position: relative;
+            overflow: hidden;
+            background: var(--gradient-dark);
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        
+        .hero-content h1 span {
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        
+        /* Founders Section */
+        .founders {
+            background: var(--black-primary);
+        }
+        
+        .founders-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-top: 60px;
+        }
+        
+        .founder-card {
+            background: var(--black-light);
+            border-radius: var(--border-radius);
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .founder-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--yellow-primary);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .founder-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-yellow);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .founder-card:hover::before {
+            opacity: 1;
+        }
+        
+        .founder-header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .founder-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--gradient-yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--black-primary);
+            flex-shrink: 0;
+        }
+        
+        .founder-info h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+        
+        .founder-role {
+            color: var(--yellow-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+        
+        .founder-tag {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .founder-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .founder-stat {
+            text-align: center;
+        }
+        
+        .founder-stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+        
+        .founder-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+        
+        /* Journey Section */
+        .journey {
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .journey::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+        }
+        
+        .journey-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .timeline-year {
+            flex: 0 0 150px;
+            text-align: right;
+            padding-right: 40px;
+            position: relative;
+        }
+        
+        .timeline-year h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .timeline-year::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--yellow-primary);
+            border-radius: 50%;
+            border: 4px solid var(--black-light);
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: calc(100% + 60px);
+            background: var(--yellow-primary);
+            opacity: 0.3;
+        }
+        
+        .timeline-content h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+        
+        .timeline-content p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        /* Vision & Mission */
+        .vision-mission {
+            background: var(--black-primary);
+        }
+        
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .vision-card, .mission-card {
+            background: var(--black-light);
+            border-radius: var(--border-radius);
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .vision-card {
+            border-top: 4px solid var(--accent-blue);
+        }
+        
+        .mission-card {
+            border-top: 4px solid var(--accent-purple);
+        }
+        
+        .vision-icon, .mission-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            font-size: 2.5rem;
+        }
+        
+        .vision-icon {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-blue);
+        }
+        
+        .mission-icon {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--accent-purple);
+        }
+        
+        .vision-card h3, .mission-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .vision-card p, .mission-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .aim-list {
+            list-style: none;
+            margin-top: 24px;
+        }
+        
+        .aim-list li {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+        }
+        
+        .aim-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--yellow-primary);
+            font-weight: bold;
+        }
+        
+        /* Platforms Section */
+        .platforms-showcase {
+            background: var(--gradient-dark);
+        }
+        
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .platform-card {
+            background: var(--black-light);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--yellow-primary);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .platform-header {
+            padding: 40px 32px 32px;
+            text-align: center;
+        }
+        
+        .platform-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-yellow);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+            color: var(--black-primary);
+        }
+        
+        .platform-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+        
+        .platform-header p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        .platform-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 24px 32px;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .platform-stat {
+            text-align: center;
+        }
+        
+        .platform-stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--yellow-primary);
+            display: block;
+        }
+        
+        .platform-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            background: var(--black-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 100%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .cta p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black-light);
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: var(--text-light);
+        }
+        
+        .footer-col p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .social-links a {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--yellow-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            transform: translateY(-3px);
+        }
+        
+        .quick-links {
+            list-style: none;
+        }
+        
+        .quick-links li {
+            margin-bottom: 16px;
+        }
+        
+        .quick-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .quick-links a:hover {
+            color: var(--yellow-primary);
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .founders-container {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .journey-timeline {
+                max-width: 700px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .header-container {
+                position: relative;
+            }
+            
+            nav {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: var(--black-light);
+                backdrop-filter: blur(10px);
+                transition: var(--transition);
+                padding: 40px 24px;
+                z-index: 999;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 24px;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-cta {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .timeline-year {
+                flex: none;
+                text-align: left;
+                padding-right: 0;
+                padding-left: 40px;
+            }
+            
+            .timeline-year::after {
+                left: 0;
+                right: auto;
+            }
+            
+            .timeline-content {
+                padding-left: 40px;
+            }
+            
+            .cta h2 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .founder-card, .vision-card, .mission-card, .platform-card {
+                padding: 32px 24px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                COLONY CORE
+            </a>
+            
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="platforms.html">Platforms</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-outline">Get Started</a>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>The Minds Behind <span>Colony Core</span></h1>
+                <p>Meet Michael and Ekemini Edet - the visionary brothers who combine frontend brilliance with backend expertise to build digital ecosystems that transform communities and simplify life in the digital space.</p>
+                <div class="cta-buttons">
+                    <a href="#founders" class="btn btn-primary">
+                        <i class="fas fa-users"></i> Meet Our Founders
+                    </a>
+                    <a href="#journey" class="btn btn-outline">
+                        <i class="fas fa-history"></i> Our Journey
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section class="founders" id="founders">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Founders</h2>
+                <p>The dynamic brother duo behind Colony Core's innovative digital solutions</p>
+            </div>
+            
+            <div class="founders-container">
+                <!-- Michael Edet -->
+                <div class="founder-card">
+                    <div class="founder-header">
+                        <div class="founder-avatar">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="founder-info">
+                            <h3>Michael Edet</h3>
+                            <div class="founder-role">Frontend Architect & Creative Director</div>
+                            <div class="founder-tag">Specializes in UI/UX Design & Frontend Development</div>
+                        </div>
+                    </div>
+                    
+                    <p>Michael brings digital interfaces to life with his exceptional frontend development skills and creative vision. With a keen eye for design and user experience, he ensures every Colony Core platform is intuitive, responsive, and visually stunning.</p>
+                    
+                    <div class="founder-stats">
+                        <div class="founder-stat">
+                            <span class="founder-stat-number">5+</span>
+                            <span class="founder-stat-label">Years Experience</span>
+                        </div>
+                        <div class="founder-stat">
+                            <span class="founder-stat-number">50+</span>
+                            <span class="founder-stat-label">Projects</span>
+                        </div>
+                        <div class="founder-stat">
+                            <span class="founder-stat-number">4</span>
+                            <span class="founder-stat-label">Platforms</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 24px;">
+                        <h4 style="color: var(--yellow-primary); margin-bottom: 12px; font-size: 1.1rem;">Expertise:</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span style="background: rgba(255, 215, 0, 0.1); color: var(--yellow-primary); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">React.js</span>
+                            <span style="background: rgba(255, 215, 0, 0.1); color: var(--yellow-primary); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">Vue.js</span>
+                            <span style="background: rgba(255, 215, 0, 0.1); color: var(--yellow-primary); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">UI/UX Design</span>
+                            <span style="background: rgba(255, 215, 0, 0.1); color: var(--yellow-primary); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ekemini Edet -->
+                <div class="founder-card">
+                    <div class="founder-header">
+                        <div class="founder-avatar">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="founder-info">
+                            <h3>Ekemini Edet</h3>
+                            <div class="founder-role">Backend Engineer & Systems Architect</div>
+                            <div class="founder-tag">Specializes in Scalable Infrastructure & Database Design</div>
+                        </div>
+                    </div>
+                    
+                    <p>Ekemini builds the robust foundations that power Colony Core platforms. His backend expertise ensures scalability, security, and performance for thousands of users across multiple digital ecosystems.</p>
+                    
+                    <div class="founder-stats">
+                        <div class="founder-stat">
+                            <span class="founder-stat-number">4+</span>
+                            <span class="founder-stat-label">Years Experience</span>
+                        </div>
+                        <div class="founder-stat">
+                            <span class="founder-stat-number">40+</span>
+                            <span class="founder-stat-label">Projects</span>
+                        </div>
+                        <div class="founder-stat">
+                            <span class="founder-stat-number">4</span>
+                            <span class="founder-stat-label">Platforms</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 24px;">
+                        <h4 style="color: var(--yellow-primary); margin-bottom: 12px; font-size: 1.1rem;">Expertise:</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span style="background: rgba(255, 215, 0, 0.1); color: var(--yellow-primary); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">Node.js</span>
+                            <span style="background: rgba(255, 215, 0, 0.1); color: var(--yellow-primary); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">Python/Django</span>
+                            <span style="background: rgba(255, 215, 0, 0.1); color: var(--yellow-primary); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">Database Design</span>
+                            <span style="background: rgba(255, 215, 0, 0.1); color: var(--yellow-primary); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">Cloud Architecture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="journey" id="journey">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Journey</h2>
+                <p>From a shared passion for technology to building digital ecosystems that transform communities</p>
+            </div>
+            
+            <div class="journey-timeline">
+                <!-- 2018 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        <h3>2018</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>The Beginning</h4>
+                        <p>Michael and Ekemini began their journey as independent developers, working on freelance projects while honing their complementary skills in frontend and backend development.</p>
+                    </div>
+                </div>
+                
+                <!-- 2019 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        <h3>2019</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>First Collaboration</h4>
+                        <p>The brothers teamed up on their first major project, discovering their synergistic workflow where Michael's design-focused frontend complemented Ekemini's robust backend solutions.</p>
+                    </div>
+                </div>
+                
+                <!-- 2020 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        <h3>2020</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Birth of Colony Core</h4>
+                        <p>Officially founded Colony Core with a vision to create interconnected digital platforms. Launched their first platform, recognizing the power of specialized digital ecosystems.</p>
+                    </div>
+                </div>
+                
+                <!-- 2021 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        <h3>2021</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Platform Expansion</h4>
+                        <p>Successfully launched multiple platforms including Planet Colony and Viral Son, each serving distinct communities while sharing the Colony Core infrastructure and design philosophy.</p>
+                    </div>
+                </div>
+                
+                <!-- 2022 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        <h3>2022</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Community Impact</h4>
+                        <p>Their platforms began serving thousands of users, with Freelancers Colony helping professionals find opportunities and Planet Play supporting music creators in sharing their work.</p>
+                    </div>
+                </div>
+                
+                <!-- 2023 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        <h3>2023</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Vision for the Future</h4>
+                        <p>Continuing to innovate with plans for mobile applications, enhanced platform features, and expanding their digital ecosystem to serve even more communities worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="vision-mission" id="vision">
+        <div class="container">
+            <div class="section-title">
+                <h2>Vision & Mission</h2>
+                <p>Guiding principles that drive every decision and innovation at Colony Core</p>
+            </div>
+            
+            <div class="vision-mission-grid">
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To create a connected digital world where technology seamlessly enhances every aspect of life, making complex tasks simple and connecting communities through purpose-built platforms.</p>
+                    
+                    <h4 style="color: var(--accent-blue); margin-top: 32px; margin-bottom: 16px;">Long-term Goals</h4>
+                    <ul class="aim-list">
+                        <li>Build 10+ specialized digital ecosystems by 2025</li>
+                        <li>Serve 1 million active users across all platforms</li>
+                        <li>Develop mobile applications for all major platforms</li>
+                        <li>Create an integrated digital experience across all Colony Core services</li>
+                    </ul>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To develop innovative digital solutions that simplify daily life, empower communities, and bridge gaps in the digital space through user-centered design and cutting-edge technology.</p>
+                    
+                    <h4 style="color: var(--accent-purple); margin-top: 32px; margin-bottom: 16px;">Core Objectives</h4>
+                    <ul class="aim-list">
+                        <li>Create intuitive platforms that require minimal learning curve</li>
+                        <li>Build scalable solutions that grow with user communities</li>
+                        <li>Ensure security and privacy in all digital interactions</li>
+                        <li>Foster digital inclusion through accessible technology</li>
+                        <li>Continuously innovate based on user feedback and needs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section class="platforms-showcase" id="platforms">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Platforms</h2>
+                <p>Digital ecosystems built by Michael and Ekemini to serve specific communities and needs</p>
+            </div>
+            
+            <div class="platforms-grid">
+                <!-- Planet Play -->
+                <div class="platform-card">
+                    <div class="platform-header">
+                        <div class="platform-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Planet Play</h3>
+                        <p>A digital hub for music creators and lovers to share, discover, and promote musical content across genres and regions.</p>
+                    </div>
+                    <div class="platform-stats">
+                        <div class="platform-stat">
+                            <span class="platform-stat-number">5K+</span>
+                            <span class="platform-stat-label">Artists</span>
+                        </div>
+                        <div class="platform-stat">
+                            <span class="platform-stat-number">50K+</span>
+                            <span class="platform-stat-label">Tracks</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Planet Colony -->
+                <div class="platform-card">
+                    <div class="platform-header">
+                        <div class="platform-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Planet Colony</h3>
+                        <p>A comprehensive news and content platform delivering curated information across technology, lifestyle, business, and community updates.</p>
+                    </div>
+                    <div class="platform-stats">
+                        <div class="platform-stat">
+                            <span class="platform-stat-number">10K+</span>
+                            <span class="platform-stat-label">Daily Readers</span>
+                        </div>
+                        <div class="platform-stat">
+                            <span class="platform-stat-number">100+</span>
+                            <span class="platform-stat-label">Categories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Freelancers Colony -->
+                <div class="platform-card">
+                    <div class="platform-header">
+                        <div class="platform-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Freelancers Colony</h3>
+                        <p>Connecting skilled professionals with opportunities while providing resources for skill development and career growth in the gig economy.</p>
+                    </div>
+                    <div class="platform-stats">
+                        <div class="platform-stat">
+                            <span class="platform-stat-number">8K+</span>
+                            <span class="platform-stat-label">Freelancers</span>
+                        </div>
+                        <div class="platform-stat">
+                            <span class="platform-stat-number">2K+</span>
+                            <span class="platform-stat-label">Projects</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Viral Son -->
+                <div class="platform-card">
+                    <div class="platform-header">
+                        <div class="platform-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Viral Son</h3>
+                        <p>A trending content platform that surfaces the most engaging and popular content across social media, news, and entertainment sectors.</p>
+                    </div>
+                    <div class="platform-stats">
+                        <div class="platform-stat">
+                            <span class="platform-stat-number">15K+</span>
+                            <span class="platform-stat-label">Daily Users</span>
+                        </div>
+                        <div class="platform-stat">
+                            <span class="platform-stat-number">500+</span>
+                            <span class="platform-stat-label">Trends Tracked</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Our Digital Revolution</h2>
+                <p>Experience the future of digital ecosystems built with passion, expertise, and a vision for connected communities.</p>
+                
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Start a Project
+                    </a>
+                    <a href="platforms.html" class="btn btn-outline">
+                        <i class="fas fa-external-link-alt"></i> Explore All Platforms
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Colony Core</h3>
+                    <p>Building digital ecosystems that connect communities and simplify life through innovative technology solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Platforms</h3>
+                    <ul class="quick-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Planet Play</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Planet Colony</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Freelancers Colony</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Viral Son</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul class="quick-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="platforms.html"><i class="fas fa-chevron-right"></i> Our Platforms</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="quick-links">
+                        <li><a href="#"><i class="fas fa-envelope"></i> contact@colonycore.com</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +1 (234) 567-8900</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Digital Innovation Hub</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri, 9AM-6PM EST</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Colony Core. All rights reserved. | Founded by Michael & Ekemini Edet</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Founder card hover effects
+        const founderCards = document.querySelectorAll('.founder-card');
+        const platformCards = document.querySelectorAll('.platform-card');
+        
+        founderCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+        
+        platformCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Update active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                if(link.getAttribute('href').startsWith('#')) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        });
+        
+        // Animated counter for platform stats
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stats = entry.target.querySelectorAll('.platform-stat-number');
+                    stats.forEach(stat => {
+                        const target = parseInt(stat.textContent.replace('K+', '000').replace('+', ''));
+                        const isK = stat.textContent.includes('K+');
+                        let current = 0;
+                        const increment = target / 50;
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                stat.textContent = isK ? (target/1000) + 'K+' : target + '+';
+                                clearInterval(timer);
+                            } else {
+                                stat.textContent = isK ? Math.floor(current/1000) + 'K+' : Math.floor(current) + '+';
+                            }
+                        }, 30);
+                    });
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe platforms section for animation
+        const platformsSection = document.getElementById('platforms');
+        if (platformsSection) {
+            observer.observe(platformsSection);
+        }
+    </script>
+</body>
+</html>

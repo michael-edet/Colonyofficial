@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platforms & Portfolio | Colony Core Digital Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Modern CSS Variables */
+        :root {
+            --yellow-primary: #FFD700;
+            --yellow-light: #FFF9C4;
+            --yellow-dark: #FFA000;
+            --black-primary: #0A0A0A;
+            --black-light: #1A1A1A;
+            --black-lighter: #2A2A2A;
+            --text-light: #F5F5F5;
+            --text-muted: #AAAAAA;
+            --accent-blue: #3B82F6;
+            --accent-purple: #8B5CF6;
+            --accent-green: #10B981;
+            --accent-red: #EF4444;
+            --gradient-yellow: linear-gradient(135deg, #FFD700 0%, #FFA000 100%);
+            --gradient-dark: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+            --gradient-blue: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+            --gradient-green: linear-gradient(135deg, #10B981 0%, #3B82F6 100%);
+            --gradient-purple: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.2);
+            --shadow-sm: 0 5px 20px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--black-primary);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-yellow);
+            color: var(--black-primary);
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--yellow-primary);
+            border: 2px solid var(--yellow-primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 24px 0;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--yellow-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-yellow);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon i {
+            color: var(--black-primary);
+            font-size: 1.2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--yellow-primary);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--yellow-primary);
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--yellow-primary);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        /* Portfolio Hero */
+        .portfolio-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            position: relative;
+            overflow: hidden;
+            background: var(--gradient-dark);
+        }
+        
+        .portfolio-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        
+        .hero-content h1 span {
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        
+        /* Platform Showcase */
+        .platform-showcase {
+            background: var(--black-primary);
+        }
+        
+        .platform-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .platform-tab {
+            padding: 16px 32px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .platform-tab.active {
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            border-color: var(--yellow-primary);
+        }
+        
+        .platform-tab:hover:not(.active) {
+            border-color: var(--yellow-primary);
+            color: var(--yellow-primary);
+        }
+        
+        .platform-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .platform-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .platform-detail {
+            background: var(--black-light);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .platform-header {
+            padding: 60px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        .planet-play-header::before { background: var(--gradient-green); }
+        .planet-colony-header::before { background: var(--gradient-yellow); }
+        .viral-son-header::before { background: var(--gradient-purple); }
+        .freelancers-header::before { background: var(--gradient-blue); }
+        
+        .platform-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+            font-size: 3rem;
+            color: var(--black-primary);
+        }
+        
+        .planet-play-icon { background: var(--gradient-green); }
+        .planet-colony-icon { background: var(--gradient-yellow); }
+        .viral-son-icon { background: var(--gradient-purple); }
+        .freelancers-icon { background: var(--gradient-blue); }
+        
+        .platform-header h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+        
+        .platform-header p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .platform-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+        
+        .platform-stat {
+            text-align: center;
+        }
+        
+        .platform-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--yellow-primary);
+            display: block;
+        }
+        
+        .platform-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .platform-body {
+            padding: 60px 48px;
+        }
+        
+        .platform-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            border-color: var(--yellow-primary);
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+            color: var(--yellow-primary);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+        
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        .platform-cta {
+            text-align: center;
+            padding-top: 48px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Projects Portfolio */
+        .projects-portfolio {
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .projects-portfolio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+        }
+        
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .project-filter {
+            padding: 12px 24px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+        
+        .project-filter.active {
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            border-color: var(--yellow-primary);
+        }
+        
+        .project-filter:hover:not(.active) {
+            border-color: var(--yellow-primary);
+            color: var(--yellow-primary);
+        }
+        
+        .projects-container {
+            min-height: 600px;
+            position: relative;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 32px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .projects-grid.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .project-card {
+            background: var(--black-light);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--yellow-primary);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .project-image {
+            height: 240px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-type {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .project-info {
+            padding: 32px;
+        }
+        
+        .project-category {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--yellow-primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .project-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+        
+        .project-info p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--yellow-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .project-link:hover {
+            color: var(--yellow-light);
+            gap: 12px;
+        }
+        
+        /* Loading State */
+        .loading-projects {
+            display: none;
+            text-align: center;
+            padding: 60px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .loading-projects.active {
+            display: flex;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid var(--yellow-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--black-primary);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 48px 32px;
+            background: var(--black-light);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            border-color: var(--yellow-primary);
+            transform: translateY(-5px);
+        }
+        
+        .stat-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+            font-size: 2rem;
+            color: var(--yellow-primary);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+        }
+        
+        .testimonials-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-slide {
+            background: var(--black-light);
+            border-radius: var(--border-radius);
+            padding: 60px 48px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .testimonial-text {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            position: relative;
+        }
+        
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            color: var(--yellow-primary);
+            font-size: 3rem;
+            position: absolute;
+        }
+        
+        .testimonial-text::before {
+            top: -20px;
+            left: -20px;
+        }
+        
+        .testimonial-text::after {
+            bottom: -40px;
+            right: -20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--yellow-primary);
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+        
+        .author-info p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+        }
+        
+        .slider-control {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--black-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slider-control:hover {
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            border-color: var(--yellow-primary);
+        }
+        
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            background: var(--black-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 100%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .cta p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black-light);
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: var(--text-light);
+        }
+        
+        .footer-col p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .social-links a {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--yellow-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--yellow-primary);
+            color: var(--black-primary);
+            transform: translateY(-3px);
+        }
+        
+        .quick-links {
+            list-style: none;
+        }
+        
+        .quick-links li {
+            margin-bottom: 16px;
+        }
+        
+        .quick-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .quick-links a:hover {
+            color: var(--yellow-primary);
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .platform-header {
+                padding: 48px 32px;
+            }
+            
+            .platform-body {
+                padding: 48px 32px;
+            }
+            
+            .platform-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .header-container {
+                position: relative;
+            }
+            
+            nav {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: var(--black-light);
+                backdrop-filter: blur(10px);
+                transition: var(--transition);
+                padding: 40px 24px;
+                z-index: 999;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 24px;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-cta {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .platform-tabs,
+            .project-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .platform-tab,
+            .project-filter {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .platform-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .platform-stats {
+                gap: 32px;
+            }
+            
+            .testimonial-slide {
+                padding: 48px 32px;
+            }
+            
+            .testimonial-text {
+                font-size: 1.25rem;
+            }
+            
+            .cta h2 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .platform-header,
+            .platform-body,
+            .project-info {
+                padding: 32px 24px;
+            }
+            
+            .platform-stat-number {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                COLONY CORE
+            </a>
+            
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-outline">Start Project</a>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Portfolio Hero -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Our <span>Digital Ecosystem</span></h1>
+                <p>Explore the platforms we've built and the projects we've delivered for clients worldwide. From community platforms to custom mobile applications, see our work in action.</p>
+                <div class="cta-buttons">
+                    <a href="#platforms" class="btn btn-primary">
+                        <i class="fas fa-cube"></i> View Platforms
+                    </a>
+                    <a href="#projects" class="btn btn-outline">
+                        <i class="fas fa-briefcase"></i> View Projects
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Showcase -->
+    <section class="platform-showcase" id="platforms">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Digital Platforms</h2>
+                <p>Community-driven platforms built to serve specific needs and connect people through technology</p>
+            </div>
+            
+            <div class="platform-tabs">
+                <button class="platform-tab active" data-platform="planet-play">
+                    <i class="fas fa-music"></i> Planet Play
+                </button>
+                <button class="platform-tab" data-platform="planet-colony">
+                    <i class="fas fa-globe"></i> Planet Colony
+                </button>
+                <button class="platform-tab" data-platform="viral-son">
+                    <i class="fas fa-fire"></i> Viral Son
+                </button>
+                <button class="platform-tab" data-platform="freelancers-colony">
+                    <i class="fas fa-users"></i> Freelancers Colony
+                </button>
+            </div>
+            
+            <!-- Planet Play -->
+            <div class="platform-content active" id="planet-play">
+                <div class="platform-detail">
+                    <div class="platform-header planet-play-header">
+                        <div class="platform-icon planet-play-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h2>Planet Play</h2>
+                        <p>A digital hub for music creators and lovers to share, discover, and promote musical content across genres and regions. Empowering artists and connecting music enthusiasts worldwide.</p>
+                        
+                        <div class="platform-stats">
+                            <div class="platform-stat">
+                                <span class="platform-stat-number">5,000+</span>
+                                <span class="platform-stat-label">Artists</span>
+                            </div>
+                            <div class="platform-stat">
+                                <span class="platform-stat-number">50,000+</span>
+                                <span class="platform-stat-label">Tracks</span>
+                            </div>
+                            <div class="platform-stat">
+                                <span class="platform-stat-number">1M+</span>
+                                <span class="platform-stat-label">Monthly Streams</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="platform-body">
+                        <h3 style="font-size: 2rem; margin-bottom: 40px; color: var(--text-light); text-align: center;">Key Features</h3>
+                        
+                        <div class="platform-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-upload"></i>
+                                </div>
+                                <h3>Music Submission System</h3>
+                                <p>Easy upload and distribution system for artists to share their music with the world and get discovered by new audiences.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-headphones"></i>
+                                </div>
+                                <h3>Playlist Curation</h3>
+                                <p>Curated playlists across genres, moods, and occasions, updated regularly by our expert music curators and community.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Artist Analytics</h3>
+                                <p>Detailed analytics dashboard for artists to track their performance, audience demographics, and growth metrics.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h3>Community Features</h3>
+                                <p>Interactive community features including comments, shares, follows, and collaborative playlists for music lovers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="platform-cta">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Visit Planet Play
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Planet Colony -->
+            <div class="platform-content" id="planet-colony">
+                <div class="platform-detail">
+                    <div class="platform-header planet-colony-header">
+                        <div class="platform-icon planet-colony-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h2>Planet Colony</h2>
+                        <p>A comprehensive news and content platform delivering curated information across technology, lifestyle, business, and community updates. Your gateway to what matters most.</p>
+                        
+                        <div class="platform-stats">
+                            <div class="platform-stat">
+                                <span class="platform-stat-number">10,000+</span>
+                                <span class="platform-stat-label">Daily Readers</span>
+                            </div>
+                            <div class="platform-stat">
+                                <span class="platform-stat-number">100+</span>
+                                <span class="platform-stat-label">Content Categories</span>
+                            </div>
+                            <div class="platform-stat">
+                                <span class="platform-stat-number">500+</span>
+                                <span class="platform-stat-label">Contributors</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="platform-body">
+                        <h3 style="font-size: 2rem; margin-bottom: 40px; color: var(--text-light); text-align: center;">Key Features</h3>
+                        
+                        <div class="platform-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-newspaper"></i>
+                                </div>
+                                <h3>Multi-Category News</h3>
+                                <p>Comprehensive coverage across technology, business, entertainment, sports, lifestyle, and community news.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-edit"></i>
+                                </div>
+                                <h3>Community Contributions</h3>
+                                <p>User-generated content submission system that allows community members to share news and perspectives.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h3>Mobile-First Experience</h3>
+                                <p>Optimized for mobile devices with fast loading times, intuitive navigation, and offline reading capabilities.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <h3>Personalized Notifications</h3>
+                                <p>Customizable notifications for preferred categories, trending topics, and breaking news alerts.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="platform-cta">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Visit Planet Colony
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Viral Son -->
+            <div class="platform-content" id="viral-son">
+                <div class="platform-detail">
+                    <div class="platform-header viral-son-header">
+                        <div class="platform-icon viral-son-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h2>Viral Son</h2>
+                        <p>A trending content platform that surfaces the most engaging and popular content across social media, news, and entertainment sectors. Stay ahead of what's trending worldwide.</p>
+                        
+                        <div class="platform-stats">
+                            <div class="platform-stat">
+                                <span class="platform-stat-number">15,000+</span>
+                                <span class="platform-stat-label">Daily Users</span>
+                            </div>
+                            <div class="platform-stat">
+                                <span class="platform-stat-number">500+</span>
+                                <span class="platform-stat-label">Trends Tracked</span>
+                            </div>
+                            <div class="platform-stat">
+                                <span class="platform-stat-number">50+</span>
+                                <span class="platform-stat-label">Countries</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="platform-body">
+                        <h3 style="font-size: 2rem; margin-bottom: 40px; color: var(--text-light); text-align: center;">Key Features</h3>
+                        
+                        <div class="platform-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h3>Real-time Trending</h3>
+                                <p>Live tracking of trending topics across social media platforms, news sites, and entertainment channels.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <h3>Trend Analytics</h3>
+                                <p>Detailed analytics showing trend growth, engagement metrics, and predictive trending algorithms.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-globe-americas"></i>
+                                </div>
+                                <h3>Geographic Filtering</h3>
+                                <p>Filter trends by country, region, or city to see what's popular in specific locations around the world.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-share-alt"></i>
+                                </div>
+                                <h3>Social Integration</h3>
+                                <p>Seamless sharing to all major social media platforms with customized previews and analytics.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="platform-cta">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Visit Viral Son
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Freelancers Colony -->
+            <div class="platform-content" id="freelancers-colony">
+                <div class="platform-detail">
+                    <div class="platform-header freelancers-header">
+                        <div class="platform-icon freelancers-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h2>Freelancers Colony</h2>
+                        <p>Connecting skilled professionals with opportunities while providing resources for skill development and career growth in the modern gig economy. Building the future of work.</p>
+                        
+                        <div class="platform-stats">
+                            <div class="platform-stat">
+                                <span class="platform-stat-number">8,000+</span>
+                                <span class="platform-stat-label">Freelancers</span>
+                            </div>
+                            <div class="platform-stat">
+                                <span class="platform-stat-number">2,000+</span>
+                                <span class="platform-stat-label">Projects</span>
+                            </div>
+                            <div class="platform-stat">
+                                <span class="platform-stat-number">$5M+</span>
+                                <span class="platform-stat-label">Earned</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="platform-body">
+                        <h3 style="font-size: 2rem; margin-bottom: 40px; color: var(--text-light); text-align: center;">Key Features</h3>
+                        
+                        <div class="platform-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h3>Client Matching</h3>
+                                <p>Intelligent matching algorithm that connects freelancers with clients based on skills, experience, and project requirements.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3>Skill Development</h3>
+                                <p>Curated learning resources, courses, and workshops to help freelancers upgrade their skills and stay competitive.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                </div>
+                                <h3>Project Management</h3>
+                                <p>Comprehensive tools for managing projects, tracking time, invoicing clients, and receiving secure payments.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <h3>Community Support</h3>
+                                <p>Active community forums, mentorship programs, and networking events for freelancers to connect and collaborate.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="platform-cta">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Visit Freelancers Colony
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio -->
+    <section class="projects-portfolio" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Projects Portfolio</h2>
+                <p>Custom digital solutions we've delivered for clients across various industries and business needs</p>
+            </div>
+            
+            <div class="project-filters">
+                <button class="project-filter active" data-category="all">All Projects</button>
+                <button class="project-filter" data-category="mobile">Mobile Apps</button>
+                <button class="project-filter" data-category="web">Websites</button>
+                <button class="project-filter" data-category="portal">Portals</button>
+                <button class="project-filter" data-category="ecommerce">E-commerce</button>
+            </div>
+            
+            <div class="projects-container">
+                <div class="loading-projects" id="loadingProjects">
+                    <div class="loader"></div>
+                    <p>Loading projects...</p>
+                </div>
+                
+                <div class="projects-grid active" id="projectsGrid">
+                    <!-- Projects will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Impact</h2>
+                <p>Numbers that demonstrate our commitment to delivering exceptional digital solutions</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <span class="stat-number">500K+</span>
+                    <span class="stat-label">Lines of Code</span>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">On-Time Delivery</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about working with Colony Core and our digital solutions</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-slide active" id="testimonial1">
+                    <div class="testimonial-text">
+                        Working with Colony Core transformed our digital presence. The Planet Colony platform they built for us has increased our readership by 300% and created an engaged community around our content.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>James Rodriguez</h4>
+                            <p>CEO, MediaTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide" id="testimonial2" style="display: none;">
+                    <div class="testimonial-text">
+                        The Freelancers Colony platform has been instrumental in scaling our remote workforce. The matching algorithms and project management tools are exceptional, and the support from Michael and Ekemini has been outstanding.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Chen</h4>
+                            <p>COO, Global Talent Network</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide" id="testimonial3" style="display: none;">
+                    <div class="testimonial-text">
+                        As an independent artist, Planet Play has completely changed how I share and promote my music. The analytics dashboard helps me understand my audience better, and I've connected with collaborators I never would have found otherwise.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Marcus Johnson</h4>
+                            <p>Independent Music Producer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-control" id="prevTestimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-control" id="nextTestimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Build Your Digital Solution?</h2>
+                <p>Whether you need a custom platform, mobile application, or website, our team has the expertise to bring your vision to life.</p>
+                
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Start Your Project
+                    </a>
+                    <a href="services.html" class="btn btn-outline">
+                        <i class="fas fa-cogs"></i> Explore Our Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Colony Core</h3>
+                    <p>Creating innovative digital solutions that enhance life in the digital space through cutting-edge technology and intuitive design.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Platforms</h3>
+                    <ul class="quick-links">
+                        <li><a href="#planet-play"><i class="fas fa-chevron-right"></i> Planet Play</a></li>
+                        <li><a href="#planet-colony"><i class="fas fa-chevron-right"></i> Planet Colony</a></li>
+                        <li><a href="#viral-son"><i class="fas fa-chevron-right"></i> Viral Son</a></li>
+                        <li><a href="#freelancers-colony"><i class="fas fa-chevron-right"></i> Freelancers Colony</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Projects</h3>
+                    <ul class="quick-links">
+                        <li><a href="#projects" data-category="mobile"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
+                        <li><a href="#projects" data-category="web"><i class="fas fa-chevron-right"></i> Websites</a></li>
+                        <li><a href="#projects" data-category="portal"><i class="fas fa-chevron-right"></i> Portals</a></li>
+                        <li><a href="#projects" data-category="ecommerce"><i class="fas fa-chevron-right"></i> E-commerce</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul class="quick-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Colony Core. All rights reserved. | Founded by Michael & Ekemini Edet</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Platform Tabs
+        const platformTabs = document.querySelectorAll('.platform-tab');
+        const platformContents = document.querySelectorAll('.platform-content');
+        
+        platformTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const platformId = tab.getAttribute('data-platform');
+                
+                // Remove active class from all tabs and contents
+                platformTabs.forEach(t => t.classList.remove('active'));
+                platformContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(platformId).classList.add('active');
+            });
+        });
+        
+        // Project Data
+        const projectsData = {
+            all: [
+                {
+                    id: 1,
+                    title: "FitLife Pro",
+                    category: "mobile",
+                    type: "Mobile App",
+                    subcategory: "Health & Fitness",
+                    description: "Comprehensive fitness tracking application with workout plans, nutrition tracking, and progress analytics for health enthusiasts.",
+                    tech: ["React Native", "Node.js", "MongoDB"],
+                    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 2,
+                    title: "GlobalTech Solutions",
+                    category: "web",
+                    type: "Website",
+                    subcategory: "Corporate",
+                    description: "Modern corporate website with service showcase, team profiles, case studies, and integrated client portal for a tech consultancy firm.",
+                    tech: ["React", "Next.js", "Tailwind CSS"],
+                    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 3,
+                    title: "EduLearn Platform",
+                    category: "portal",
+                    type: "Portal",
+                    subcategory: "Education",
+                    description: "Comprehensive learning management portal with course creation, student tracking, assessments, and certification for online education.",
+                    tech: ["Vue.js", "Laravel", "MySQL"],
+                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 4,
+                    title: "UrbanStyle Fashion",
+                    category: "ecommerce",
+                    type: "E-commerce",
+                    subcategory: "Retail",
+                    description: "Full-featured e-commerce platform with product management, inventory tracking, payment integration, and customer analytics.",
+                    tech: ["Shopify", "React", "Node.js"],
+                    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 5,
+                    title: "WealthTrack Pro",
+                    category: "mobile",
+                    type: "Mobile App",
+                    subcategory: "Finance",
+                    description: "Personal finance management application with budgeting tools, investment tracking, bill reminders, and financial insights.",
+                    tech: ["Flutter", "Firebase", "Python"],
+                    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 6,
+                    title: "MediCare Connect",
+                    category: "portal",
+                    type: "Portal",
+                    subcategory: "Healthcare",
+                    description: "Healthcare provider portal for patient management, appointment scheduling, electronic health records, and telemedicine integration.",
+                    tech: ["Angular", ".NET Core", "SQL Server"],
+                    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 7,
+                    title: "TaskMaster Pro",
+                    category: "mobile",
+                    type: "Mobile App",
+                    subcategory: "Productivity",
+                    description: "Advanced task management application with team collaboration, time tracking, and project reporting features.",
+                    tech: ["Swift", "Node.js", "PostgreSQL"],
+                    image: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 8,
+                    title: "Creative Design Agency",
+                    category: "web",
+                    type: "Website",
+                    subcategory: "Agency",
+                    description: "Portfolio website for a creative design agency with project showcases, client testimonials, and service offerings.",
+                    tech: ["Next.js", "Styled Components", "GraphQL"],
+                    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                }
+            ],
+            mobile: [
+                {
+                    id: 1,
+                    title: "FitLife Pro",
+                    category: "mobile",
+                    type: "Mobile App",
+                    subcategory: "Health & Fitness",
+                    description: "Comprehensive fitness tracking application with workout plans, nutrition tracking, and progress analytics for health enthusiasts.",
+                    tech: ["React Native", "Node.js", "MongoDB"],
+                    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 5,
+                    title: "WealthTrack Pro",
+                    category: "mobile",
+                    type: "Mobile App",
+                    subcategory: "Finance",
+                    description: "Personal finance management application with budgeting tools, investment tracking, bill reminders, and financial insights.",
+                    tech: ["Flutter", "Firebase", "Python"],
+                    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 7,
+                    title: "TaskMaster Pro",
+                    category: "mobile",
+                    type: "Mobile App",
+                    subcategory: "Productivity",
+                    description: "Advanced task management application with team collaboration, time tracking, and project reporting features.",
+                    tech: ["Swift", "Node.js", "PostgreSQL"],
+                    image: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 9,
+                    title: "FoodDeliver Express",
+                    category: "mobile",
+                    type: "Mobile App",
+                    subcategory: "Food Delivery",
+                    description: "Food delivery application with restaurant listings, menu browsing, order tracking, and payment integration.",
+                    tech: ["React Native", "Express.js", "MongoDB"],
+                    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                }
+            ],
+            web: [
+                {
+                    id: 2,
+                    title: "GlobalTech Solutions",
+                    category: "web",
+                    type: "Website",
+                    subcategory: "Corporate",
+                    description: "Modern corporate website with service showcase, team profiles, case studies, and integrated client portal for a tech consultancy firm.",
+                    tech: ["React", "Next.js", "Tailwind CSS"],
+                    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 8,
+                    title: "Creative Design Agency",
+                    category: "web",
+                    type: "Website",
+                    subcategory: "Agency",
+                    description: "Portfolio website for a creative design agency with project showcases, client testimonials, and service offerings.",
+                    tech: ["Next.js", "Styled Components", "GraphQL"],
+                    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 10,
+                    title: "Travel Explorer",
+                    category: "web",
+                    type: "Website",
+                    subcategory: "Travel",
+                    description: "Travel booking website with destination guides, hotel reservations, flight booking, and itinerary planning.",
+                    tech: ["Vue.js", "Laravel", "MySQL"],
+                    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                }
+            ],
+            portal: [
+                {
+                    id: 3,
+                    title: "EduLearn Platform",
+                    category: "portal",
+                    type: "Portal",
+                    subcategory: "Education",
+                    description: "Comprehensive learning management portal with course creation, student tracking, assessments, and certification for online education.",
+                    tech: ["Vue.js", "Laravel", "MySQL"],
+                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 6,
+                    title: "MediCare Connect",
+                    category: "portal",
+                    type: "Portal",
+                    subcategory: "Healthcare",
+                    description: "Healthcare provider portal for patient management, appointment scheduling, electronic health records, and telemedicine integration.",
+                    tech: ["Angular", ".NET Core", "SQL Server"],
+                    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 11,
+                    title: "Enterprise CRM System",
+                    category: "portal",
+                    type: "Portal",
+                    subcategory: "Business",
+                    description: "Enterprise customer relationship management system with lead tracking, sales pipeline, and customer support features.",
+                    tech: ["Angular", "Java Spring", "PostgreSQL"],
+                    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                }
+            ],
+            ecommerce: [
+                {
+                    id: 4,
+                    title: "UrbanStyle Fashion",
+                    category: "ecommerce",
+                    type: "E-commerce",
+                    subcategory: "Retail",
+                    description: "Full-featured e-commerce platform with product management, inventory tracking, payment integration, and customer analytics.",
+                    tech: ["Shopify", "React", "Node.js"],
+                    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                    id: 12,
+                    title: "TechGadget Store",
+                    category: "ecommerce",
+                    type: "E-commerce",
+                    subcategory: "Electronics",
+                    description: "Online electronics store with product reviews, comparison tools, warranty management, and customer support portal.",
+                    tech: ["Magento", "PHP", "MySQL"],
+                    image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                }
+            ]
+        };
+        
+        // DOM Elements
+        const projectFilters = document.querySelectorAll('.project-filter');
+        const projectsGrid = document.getElementById('projectsGrid');
+        const loadingProjects = document.getElementById('loadingProjects');
+        
+        // Function to create project card HTML
+        function createProjectCard(project) {
+            return `
+                <div class="project-card" data-category="${project.category}" style="animation-delay: ${Math.random() * 0.5}s">
+                    <div class="project-image">
+                        <img src="${project.image}" alt="${project.title}">
+                        <span class="project-type">${project.type}</span>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">${project.subcategory}</span>
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                        
+                        <div class="project-tech">
+                            ${project.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                        </div>
+                        
+                        <a href="#" class="project-link">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Function to load projects
+        function loadProjects(category) {
+            // Show loading state
+            projectsGrid.classList.remove('active');
+            loadingProjects.classList.add('active');
+            
+            // Clear current projects
+            projectsGrid.innerHTML = '';
+            
+            // Simulate loading delay
+            setTimeout(() => {
+                // Get projects for selected category
+                const projects = projectsData[category] || projectsData.all;
+                
+                // Create project cards
+                projects.forEach(project => {
+                    projectsGrid.innerHTML += createProjectCard(project);
+                });
+                
+                // Hide loading state and show projects
+                loadingProjects.classList.remove('active');
+                projectsGrid.classList.add('active');
+                
+                // Add event listeners to new project cards
+                addProjectCardListeners();
+            }, 600);
+        }
+        
+        // Function to add hover effects to project cards
+        function addProjectCardListeners() {
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+        }
+        
+        // Project Filtering
+        projectFilters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                const filterValue = filter.getAttribute('data-category');
+                
+                // Remove active class from all filters
+                projectFilters.forEach(f => f.classList.remove('active'));
+                // Add active class to clicked filter
+                filter.classList.add('active');
+                
+                // Load projects for selected category
+                loadProjects(filterValue);
+            });
+        });
+        
+        // Load initial projects (all)
+        loadProjects('all');
+        
+        // Testimonial Slider
+        const testimonials = document.querySelectorAll('.testimonial-slide');
+        const prevBtn = document.getElementById('prevTestimonial');
+        const nextBtn = document.getElementById('nextTestimonial');
+        let currentTestimonial = 0;
+        
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                testimonial.style.display = i === index ? 'block' : 'none';
+            });
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+        
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+        
+        // Feature card hover effects
+        const featureCards = document.querySelectorAll('.feature-card');
+        
+        featureCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a, .quick-links a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') && this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                        
+                        // If it's a project category link, trigger that filter
+                        const category = this.getAttribute('data-category');
+                        if (category) {
+                            const matchingFilter = document.querySelector(`.project-filter[data-category="${category}"]`);
+                            if (matchingFilter) {
+                                matchingFilter.click();
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Animated counters for stats
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const statsSection = document.querySelector('.stats-section');
+        let statsAnimated = false;
+        
+        const animateStats = () => {
+            if (statsAnimated) return;
+            
+            const sectionTop = statsSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.5;
+            
+            if (sectionTop < screenPosition) {
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.textContent.replace('+', '').replace('K', '000').replace('M', '000000'));
+                    const isK = stat.textContent.includes('K');
+                    const isM = stat.textContent.includes('M');
+                    let current = 0;
+                    const increment = target / 50;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            if (isK) {
+                                stat.textContent = (target/1000) + 'K+';
+                            } else if (isM) {
+                                stat.textContent = (target/1000000) + 'M+';
+                            } else if (stat.textContent.includes('%')) {
+                                stat.textContent = target + '%';
+                            } else {
+                                stat.textContent = target + '+';
+                            }
+                            clearInterval(timer);
+                        } else {
+                            if (isK) {
+                                stat.textContent = Math.floor(current/1000) + 'K+';
+                            } else if (isM) {
+                                stat.textContent = (current/1000000).toFixed(1) + 'M+';
+                            } else if (stat.textContent.includes('%')) {
+                                stat.textContent = Math.floor(current) + '%';
+                            } else {
+                                stat.textContent = Math.floor(current) + '+';
+                            }
+                        }
+                    }, 30);
+                });
+                
+                statsAnimated = true;
+            }
+        };
+        
+        // Animated counters for platform stats
+        const platformStatNumbers = document.querySelectorAll('.platform-stat-number');
+        let platformStatsAnimated = false;
+        
+        const animatePlatformStats = () => {
+            if (platformStatsAnimated) return;
+            
+            const platformsSection = document.getElementById('platforms');
+            const sectionTop = platformsSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.5;
+            
+            if (sectionTop < screenPosition) {
+                platformStatNumbers.forEach(stat => {
+                    const target = parseInt(stat.textContent.replace(',', '').replace('+', ''));
+                    const isK = stat.textContent.includes('K');
+                    const isM = stat.textContent.includes('M');
+                    let current = 0;
+                    const increment = target / 50;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            if (isK) {
+                                stat.textContent = (target/1000) + 'K+';
+                            } else if (isM) {
+                                stat.textContent = (target/1000000) + 'M+';
+                            } else {
+                                stat.textContent = target.toLocaleString() + '+';
+                            }
+                            clearInterval(timer);
+                        } else {
+                            if (isK) {
+                                stat.textContent = Math.floor(current/1000) + 'K+';
+                            } else if (isM) {
+                                stat.textContent = (current/1000000).toFixed(1) + 'M+';
+                            } else {
+                                stat.textContent = Math.floor(current).toLocaleString() + '+';
+                            }
+                        }
+                    }, 30);
+                });
+                
+                platformStatsAnimated = true;
+            }
+        };
+        
+        // Scroll event listeners for animations
+        window.addEventListener('scroll', () => {
+            animateStats();
+            animatePlatformStats();
+        });
+        
+        // Initial check for animations
+        animateStats();
+        animatePlatformStats();
+    </script>
+</body>
+</html>
